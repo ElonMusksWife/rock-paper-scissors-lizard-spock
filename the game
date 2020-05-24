@@ -1,0 +1,157 @@
+/*Rock, paper, scissors, lizard 🦎, spok 🖖
+cin => user try
+random number => computer try
+scissors cuts paper
+paper covers rock
+rock crushes lizard
+lizard poisons spok
+spok smashes scissors
+scissors decapitate lizard 
+lizard eats paper
+paper disproves spok
+spok vaporizes rock
+rock crushes scissors
+*/
+#include <iostream>
+#include <stdlib.h>
+int main(){
+  
+  int guess;
+  std::string comp; 
+  //Say hello!  
+  std::cout << "====================\n";
+  std::cout << "rock paper scissors lizard spock!\n";
+  std::cout << "====================\n";
+
+  std::cout << "1) ✊\n";
+  std::cout << "2) ✋\n";
+  std::cout << "3) ✌️\n";
+  std::cout << "4) 🦎\n";
+  std::cout << "5) 🖖\n";
+
+  std::cout << "shoot! ";
+  //user input conversion
+  int userNum = 0;
+  std::string user;
+    std::cin >> userNum;
+    switch(userNum){
+      case 1:
+        user = "✊";
+        break;
+      case 2:
+        user = "✋";
+        break;
+      case 3:
+        user = "✌️";
+        break;
+      case 4:
+        user = "🦎";
+        break;
+      case 5:
+        user = "🖖";
+        break;
+  //     std::cout << "4) 🦎\n";
+  // std::cout << "5) 🖖\n";
+
+      default:
+        std::cout<< "ERROR";
+        break;
+    }
+  //Computer shot
+  srand(time(0));
+  guess = rand() % 5 + 1;
+  //Computer conversion
+  switch(guess){
+    case 1:
+      comp = "✊";
+      break;
+    case 2:
+      comp = "✋";
+      break;
+    case 3:
+      comp = "✌️";
+      break;
+    case 4:
+      comp = "🦎";
+      break;
+    case 5:
+      comp = "🖖";
+      break;
+    default:
+      std::cout<< "ERROR";
+      break;
+  }
+
+// logic 
+  if(user == "✌️"){
+      if(comp == "✊"){std::cout<<"comp shot: ✊\n rock crushes scissors\n";
+      std::cout<<"Comp win";}
+      else if(comp == "✋"){std::cout<<"comp shot: ✋\nscissors cuts paper\n";
+      std::cout<<"User win";}
+      else if(comp == "🦎"){
+        std::cout<<"comp shot: 🦎\nScissors decapitate Lizard.\n";
+        std::cout<<"User win";}
+      else if(comp == "🖖"){
+        std::cout<<"comp shot: 🖖\nSpock smashes Scissors\n";
+        std::cout<<"comp win";}
+      else {std::cout<<"comp shot: ✌️\n";
+        std::cout<<"Draw";}
+      }
+
+else if(user == "✊"){
+      if(comp == "✋"){std::cout<<"comp shot: ✋\nPaper covers Rock\n";
+      std::cout<<"Comp win";}
+      else if(comp == "✌️"){std::cout<<"comp shot: ✌️\nrock crushes scissors\n";
+        std::cout<<"User win";}
+      else if(comp == "🦎"){
+        std::cout<<"comp shot: 🦎\nRock crushes Lizard.\n";
+        std::cout<<"User win";}
+      else if(comp == "🖖"){
+        std::cout<<"comp shot: 🖖\nRock crushes Lizard.\n";
+        std::cout<<"comp win";}
+      else {std::cout<<"comp shot: ✊\n";
+        std::cout<<"Draw";}
+      }
+   else if(user == "✋"){
+      if(comp == "✊"){std::cout<<"comp shot: ✊\nPaper covers Rock\n";
+        std::cout<<"User win";}
+      else if(comp == "✌️"){std::cout<<"comp shot: ✌️\nscissors cuts paper\n";
+        std::cout<<"comp win";}
+      else if(comp == "🦎"){
+        std::cout<<"comp shot: 🦎\nLizard eats Paper\n";
+        std::cout<<"comp win";}
+      else if(comp == "🖖"){
+        std::cout<<"comp shot: 🖖\nPaper disproves Spock.\n";
+        std::cout<<"user win";}
+      else {std::cout<<"comp shot: ✋\n";
+        std::cout<<"Draw";}
+      }
+    else if(user == "🦎"){
+      if(comp == "✊"){std::cout<<"comp shot: ✊\nRock crushes Lizard.\n";
+        std::cout<<"comp win";}
+      else if(comp == "✌️"){std::cout<<"comp shot: ✌️\nScissors decapitate Lizard.\n";
+        std::cout<<"comp win";}
+      else if(comp == "✋"){
+        std::cout<<"comp shot: ✋\nLizard eats Paper\n";
+        std::cout<<"User win";}
+      else if(comp == "🖖"){
+        std::cout<<"comp shot: 🖖\nLizard poisons Spock.\n";
+        std::cout<<"user win";}
+      else {std::cout<<"comp shot: 🦎\n";
+        std::cout<<"Draw";}
+    }
+    else if(user == "🖖"){
+      if(comp == "✊"){std::cout<<"comp shot: ✊\nSpock vaporizes Rock.\n";
+        std::cout<<"User win";}
+      else if(comp == "✌️"){std::cout<<"comp shot: ✌️\nSpock smashes Scissors.\n";
+        std::cout<<"User win";}
+      else if(comp == "✋"){
+        std::cout<<"comp shot: ✋\nPaper disproves Spock.\n";
+        std::cout<<"comp win";}
+      else if(comp == "🦎"){
+        std::cout<<"comp shot: 🦎\nLizard poisons Spock.\n";
+        std::cout<<"comp win";}
+      else {std::cout<<"comp shot: 🖖\n";
+        std::cout<<"Draw";}
+    }
+}
